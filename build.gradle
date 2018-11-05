@@ -1,0 +1,25 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.3.0"
+}
+
+group 'es.lifk'
+version '0.1-Alpha'
+
+repositories {
+    maven { url "https://dl.bintray.com/kotlin/ktor" }
+    jcenter()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile 'io.zipkin.brave:brave-instrumentation-http:5.5.0'
+    compile 'io.zipkin.brave:brave:5.5.0'
+    compile 'io.ktor:ktor-client-core-jvm:1.0.0-beta-3'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
